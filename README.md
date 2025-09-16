@@ -1,9 +1,10 @@
 # 🌱 Alimentos do Cerrado e Saúde do Coração
 
-Este projeto é uma página simples criada com **HTML e CSS** para divulgar a importância dos frutos do Cerrado para a saúde do coração.  
+Este projeto é uma página simples criada com **HTML e CSS** para divulgar a importância dos frutos do Cerrado para a saúde do coração. Em conscientização ao dia Mundial do Coração, 29 de setembro.
+
 O site foi publicado usando **GitHub Pages**.
 
-👉 Acesse o site aqui: 
+👉 Acesse o site aqui: https://larissaapdia.github.io/curiosidade-alimentos-cerrado/
 
 ---
 
@@ -24,56 +25,228 @@ O site foi publicado usando **GitHub Pages**.
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alimentos do Cerrado</title>
+  <title>Alimentos do Cerrado - Curiosidades</title>
+
   <style>
-    <!-- Aqui ficam os estilos CSS -->
+    :root{--accent:#2e8b57;--max:1100px}
+    body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f4f4f9;color:#222}
+
+    /* ===== CABEÇALHO ===== */
+    header{
+      background: url("assets/images/template.jpg") no-repeat center center/cover;
+      color:#fff;
+      text-align:center;
+      padding:4rem 1rem 2rem;
+      position:relative;
+      overflow:hidden;
+    }
+    header::after{
+      content:"";
+      position:absolute;inset:0;
+      background:rgba(0,0,0,0.45);
+      z-index:0;
+    }
+    header .wrap{position:relative;z-index:1;max-width:var(--max);margin:0 auto}
+    header h1{margin:0 0 1rem;font-size:2.1rem}
+    
+    /* Subtítulo estilo faixa */
+    header h2{
+      display:inline-block;
+      background:#3f5bd4;
+      color:#fff;
+      font-size:1rem;
+      font-weight:bold;
+      padding:6px 14px;
+      border-radius:4px;
+      letter-spacing:0.05em;
+      margin:0;
+    }
+
+    /* ===== INTRO ===== */
+    .intro{
+      max-width:var(--max);
+      margin:2rem auto 3rem;
+      padding:1.8rem;
+      border-radius:10px;
+      background:#fff;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    }
+    .intro h2{color:var(--accent);margin:0 0 0.5rem;font-size:2.0rem}
+    .intro p{color:#444;line-height:1.7;margin:0 0 1.8rem;font-size:1.25rem}
+
+    /* ===== GRID DE CARDS ===== */
+    main{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:1.2rem;
+      display:grid;
+      grid-template-columns: repeat(2, 1fr); /* agora 2 colunas */
+      gap:30px; /* mais espaçamento */
+    }
+
+    .card{
+      background:#fff;
+      border-radius:14px;
+      padding:20px;
+      box-shadow:0 6px 18px rgba(8,8,8,0.06);
+      transition:transform .18s,box-shadow .18s;
+      overflow:hidden;
+      text-align:center;
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 12px 28px rgba(8,8,8,0.12)}
+    .card img{
+      width:100%;
+      height:260px; /* imagens maiores */
+      object-fit:cover;
+      border-radius:10px;
+      display:block;
+      margin-bottom:16px;
+    }
+    .card h3{margin:0 0 12px;color:var(--accent);font-size:1.8rem}
+    .card p{margin:0 0 10px;color:#333;font-size:1.2rem;line-height:1.5}
+
+    /* ===== RODAPÉ ===== */
+    footer{
+      background:#af6a4c;
+      color:#fff;
+      text-align:center;
+      padding:22px;
+      font-size:1.2rem;
+      font-weight:bold;
+      letter-spacing:0.03em;
+    }
+
+    /* responsivo */
+    @media (max-width:900px){
+      main{grid-template-columns:1fr;} /* no celular fica 1 coluna */
+      .card img{height:220px;} /* ajusta imagens para caber melhor */
+    }
   </style>
 </head>
 <body>
-  <!-- Aqui fica o conteúdo da página -->
+  <!-- CABEÇALHO -->
+  <header>
+    <div class="wrap">
+      <h1>Alimentos do Centro-Oeste que fazem bem ao coração ❤️</h1>
+      <h2>CURIOSIDADES DE FRUTAS DO CERRADO</h2>
+    </div>
+  </header>
+
+  <!-- INTRODUÇÃO -->
+  <section class="intro">
+    <h2>🌿 A Importância da Alimentação para a saúde do Coração</h2>
+    <p>A alimentação é um dos pilares da saúde cardiovascular. Uma dieta equilibrada, rica em frutas, verduras, legumes, grãos integrais e proteínas magras, ajuda a controlar a pressão arterial, reduzir o colesterol e manter o peso adequado.</p>
+    <p>Por outro lado, o consumo excessivo de sal, açúcar, frituras e alimentos ultraprocessados aumenta o risco de infarto, AVC e outras doenças do coração.</p>
+    <p><strong>Escolher bem o que colocamos no prato é uma das formas mais simples e eficazes de proteger a vida.</strong></p>
+  </section>
+  
+  <!-- CARDS -->
+  
+  <main>
+    <article class="card">
+      <img src="assets/images/pequi.jpg" alt="Pequi">
+      <h3>Pequi</h3>
+      <p>Vitaminas A, E, gorduras insaturadas e antioxidantes.</p>
+      <p>Ajuda a reduzir o colesterol LDL e protege vasos sanguíneos.</p>
+    </article>
+
+    <article class="card">
+      <img src="assets/images/baru.jpg" alt="Baru">
+      <h3>Baru</h3>
+      <p>Gorduras insaturadas, proteína e fibras.</p>
+      <p>Contribui para o equilíbrio do colesterol e saciedade.</p>
+    </article>
+
+    <article class="card">
+      <img src="assets/images/bocaiuva.jpg" alt="Bocaiúva">
+      <h3>Bocaiúva</h3>
+      <p>Carboidratos, fibras e vitaminas.</p>
+      <p>Melhora o metabolismo e fornece energia saudável.</p>
+    </article>
+    
+    <article class="card">
+      <img src="assets/images/buriti.jpg" alt="Buriti">
+      <h3>Buriti</h3>
+      <p>Vitamina C, ferro e antioxidantes</p>
+      <p>Auxilia na circulação e na saúde vascular</p>
+    </article>
+
+    <article class="card">
+      <img src="assets/images/cajuzinho.jpg" alt="Cajuzinho">
+      <h3>Cajuzinho do Cerrado</h3>
+      <p>Vitamina A (carotenoides) e antioxidantes.</p>
+      <p>Protege contra danos oxidativos nas artérias.</p>
+    </article>
+
+     <article class="card">
+      <img src="assets/images/gabiroba.jpg" alt="Gabiroba">
+      <h3>Guavira (Gabiroba)</h3>
+      <p>Vitaminas e compostos fenólicos</p>
+      <p>Ação antioxidante que protege células vasculares</p>
+    </article>
+
+     <article class="card">
+      <img src="assets/images/jatoba.jpg" alt="Jatoba">
+      <h3>Jatobá</h3>
+      <p>Fibras e minerais</p>
+      <p>Melhora trânsito intestinal e inflamação sistêmica</p>
+    </article>
+
+     <article class="card">
+      <img src="assets/images/jenipapo.jpg" alt="Jenipapo">
+      <h3>Jenipapo</h3>
+      <p>Vitaminas e antioxidantes</p>
+      <p>Combate estresse oxidativo</p>
+    </article>
+
+     <article class="card">
+      <img src="assets/images/maracuja.jpg" alt="Maracuja">
+      <h3>Maracujá do Cerrado</h3>
+      <p>Rico em fibras, vitaminas A e C, e compostos antioxidantes</p>
+      <p>Ajuda a controlar a pressão arterial, fortalece o coração e promove relaxamento natural</p>
+    </article>
+
+    <article class="card">
+      <img src="assets/images/mamacadela.jpg" alt="Mamacadela">
+      <h3>Mamacadela</h3>
+      <p class="nutri">Vitaminas e fibras</p>
+      <p class="benef">Auxilia no equilíbrio metabólico</p>
+    </article>
+
+    <article class="card">
+      <img src="assets/images/murici.jpg" alt="Murici">
+      <h3>Murici</h3>
+      <p class="nutri">Antioxidantes e vitaminas</p>
+      <p class="benef">Protege tecidos contra oxidação</p>
+    </article>
+
+    <article class="card">
+      <img src="assets/images/umbu.jpg" alt="Umbu">
+      <h3>Umbu</h3>
+      <p class="nutri">Vitamina C, potássio e fibras.</p>
+      <p class="benef">Ajuda a controlar pressão arterial.</p>
+    </article>
+
+    <article class="card">
+      <img src="assets/images/araticum.jpg" alt="Araticum">
+      <h3>Araticum</h3>
+      <p>Vitaminas C e complexo B, além de fibras.</p>
+      <p>Auxilia na digestão e fortalece o sistema imunológico.</p>
+    </article>
+
+    <article class="card">
+      <img src="assets/images/mangaba.jpg" alt="Mangaba">
+      <h3>Mangaba</h3>
+      <p>Vitamina C e compostos antioxidantes.</p>
+      <p>Melhora a circulação e contribui para a saúde do coração.</p>
+    </article>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    Inclua essas delícias do Cerrado na sua dieta e dê mais sabor e saúde ao seu coração! ❤️🌿
+  </footer>
 </body>
 </html>
-<!-- ===== Cabeçalho ===== -->
-<header>
-  <h1>Alimentos do Cerrado que fazem bem ao coração</h1>
-  <p>A importância da alimentação para a saúde cardiovascular</p>
-</header>
-<!-- ===== Conteúdo Principal ===== -->
-<main>
-  <h2>Frutas e seus benefícios</h2>
-  <div class="grid">
-    <!-- Aqui entram os cards das frutas -->
-  </div>
-</main>
-<!-- ===== Card Pequi ===== -->
-<div class="card">
-  <img src="assets/images/pequi.jpg" alt="Pequi">
-  <div class="card-content">
-    <h3>Pequi</h3>
-    <p>Rico em antioxidantes e gorduras boas. Protege os vasos sanguíneos.</p>
-  </div>
-</div>
-<!-- ===== Rodapé ===== -->
-<footer>
-  <p>🌱 Projeto de conscientização - Alimentação saudável e coração forte</p>
-</footer>
-/* ===== Grid de Cards ===== */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-/* ===== Efeito no Card ===== */
-.card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.05); /* aumenta um pouco no hover */
 }
 
